@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
+
+html, body {
+  height: 100%;
+  background-color: #333;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  max-width: 100%;
+  font-family: 'Alfa Slab One', sans-serif;
+  color: white;
+  transition: background-color 0.5s;
+}
+
+/* Vetically Centering */
+.main {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+.wrapper {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+}
+
+div#main-container {
+  background-color: #555;
+  position: relative;
+  left: 0;
+  border-radius: 10pt;
+}
+
+div.square {
+  background-color: #333;
+  position: absolute;
+  display: inline-block;
+}
+
+.animated.zoomIn {
+  -webkit-animation: zoomIn 0.2s; /* Safari 4+ */
+  -moz-animation:    zoomIn 0.2s; /* Fx 5+ */
+  -o-animation:      zoomIn 0.2s; /* Opera 12+ */
+  animation:         zoomIn 0.2s; /* IE 10+, Fx 29+ */
+}
+.animated.bounceIn {
+  -webkit-animation: bounceIn 0.2s; /* Safari 4+ */
+  -moz-animation:    bounceIn 0.2s; /* Fx 5+ */
+  -o-animation:      bounceIn 0.2s; /* Opera 12+ */
+  animation:         bounceIn 0.2s; /* IE 10+, Fx 29+ */
+}
+
+button#start-btn {
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  border-radius: 15pt;
+  padding: 5pt 10pt;
+  margin: 7.5pt 0;
+  transition: color 0.5s,  background-color 0.5s;
+}
+button#start-btn:hover {
+  background-color: #333;
+  color: #ccc;
+  transition: color 0.5s,  background-color 0.5s;  
+}
+
+p#score-header { color: #ccc }
+p#score {
+  margin: 7.5pt 0;
+  padding: 5pt; 
+  background-color: #ccc;
+  color: #333;
+  border-radius: 15pt;
+}
