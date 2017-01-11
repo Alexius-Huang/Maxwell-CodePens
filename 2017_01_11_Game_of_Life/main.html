@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=0.9, maximum-scale=0.9, user-scalable=no">
+
+  <title>Game of Life by Maxwell Alexius</title>
+
+  <!-- Import Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- Import Animate CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+  <!-- Import jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  <!-- Import CSS & JS -->
+  <link rel="stylesheet" href="./main.css">
+  <script src="./main.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="wrapper">
+      <div class="row">
+        <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10">
+          <h1 id="main-title" class="text-center">Game of Life</h1>
+        </div>
+      </div>
+
+      <div id="main-section" class="row">
+        <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10">
+          <div id="main-container">
+          </div>
+        </div>
+      </div>
+      
+      <div class="row" id="control-section">
+        <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10">
+          <button id="pause-btn">Pause</button>
+          <button id="play-btn">Play</button>
+          <button id="oscillator-btn">Oscillators</button>
+          <button id="glider-btn">Glider Gun</button>
+          <button id="weekender-btn">Weekender</button>
+          <button id="clear-btn">Empty</button>
+<!-- 
+          <div id="size-input-container">
+            Size <span style="margin-left: 5pt"></span> <input id="size-input" type="number" name="size" max="100" min="10" value="50" />
+          </div>
+-->
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>

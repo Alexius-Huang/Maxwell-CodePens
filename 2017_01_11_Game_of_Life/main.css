@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:700');
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  background-color: #47b7ff;
+}
+
+h1#main-title {
+  background-color: white;
+  color: #47b7ff;
+  font-size: 3.5vh;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 1pt;
+  padding: 7.5pt 15pt;
+  display: inline-block;
+  border-top-left-radius: 20pt;
+  border-top-right-radius: 20pt;
+}
+div#main-container {
+  position: relative;
+}
+div#control-section {
+  margin-top: 1pt;
+}
+div#size-input-container {
+  background-color: white;
+  display: inline-block;
+  padding: 3pt 10pt;
+  color: #47b7ff;
+}
+button {
+  display: inline-block;
+  margin: 1px 0 0 0;
+  padding: 5pt 10pt;
+  background-color: white;
+  text-decoration: none;
+  color: #47b7ff;
+  border: none;
+}
+button:hover {
+  text-decoration: none;
+  background-color: #51a2ff;
+  color: white;
+}
+button:last-child {
+  border-bottom-right-radius: 10pt;  
+}
+button:focus {
+  outline: none;
+}
+/*
+.square-element {
+  position: absolute;
+}
+*/
+/* Vetically Centering */
+.main {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+.wrapper {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+}
+
+
+/*
+ color  1: '#47b7ff';
+ color  2: '#47a9ff';
+ color  3: '#51a2ff';
+ color  4: '#5c9bff';
+ color  5: '#6794ff';
+ color  6: '#718dff';
+ color  7: '#7c86ff';
+ color  8: '#877fff';
+ color  9: '#9278ff';
+ color 10: '#9c71ff';
+ color 11: '#a76aff';
+ color 12: '#b263ff';
+ color 13: '#bc5cff';
+ color 14: '#c755ff';
+ color 15: '#d24eff';
+ color 16: '#dd47ff';
+*/
