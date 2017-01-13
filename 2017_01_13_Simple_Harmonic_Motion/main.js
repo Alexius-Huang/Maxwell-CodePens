@@ -1,33 +1,43 @@
 var $canvas;
 var $canvasContainer;
-var $size = 500;
+var $size;
+var windowWidth = $(window).width();
+if (windowWidth <= 360) {
+  $size = 300;
+} else if (windowWidth <= 480) {
+  $size = 360;
+} else if (windowWidth <= 720) {
+  $size = 400;
+} else {
+  $size = 500;
+}
 var $ctx;
 var $stretchUnit = 10 / 1.1;
-var $springMaxY = 195;
-var $springMinY = 155;
-var $springMinX = 70;
+var $springMaxY = $size / 500 * 195;
+var $springMinY = $size / 500 * 155;
+var $springMinX = $size / 500 * 70;
 var $springMaxX = NaN;
 var $springCurrentX = NaN;
 var $springNextX = NaN;
-var $boxSize = 50;
+var $boxSize = $size / 10;
 var $degree = 90;
 var $extension = 0.5;
 var $strength = NaN;
-var $motionRate = 5;
+var $motionRate = 2;
 var $motionID = null;
 var $isDragging = false;
 var $boxElement = document.createElement('div');
 var $boxHammerElement;
 var $dragXPosition = NaN;
-var $energy100YPos = 260;
-var $energyBarChartMaxHeight = 30 * 4;
+var $energy100YPos = $size / 500 * 260;
+var $energyBarChartMaxHeight = $size / 50 * 3 * 4;
 var $energyTotalBarHeight = NaN;
 var $energyKineticBarHeight = NaN;
 var $energyPotentialBarHeight = NaN;
 var $energyKineticYPoints = [];
 var $energyPotentialYPoints = [];
-var $lineChartStart = 275;
-var $lineChartEnd = 450 - 10;
+var $lineChartStart = $size / 500 * 275;
+var $lineChartEnd = $size / 500 * 450 - 10;
 var $totalLineChartData = $lineChartEnd - $lineChartStart;
 var $counter = 0;
 var $speedRate = NaN;
@@ -61,9 +71,9 @@ function initCanvas() {
   $canvasContainer = document.getElementById('main-canvas-container');
   $canvas = document.getElementById('main-canvas');
   $canvas.height = $size;
-  $canvas.width = $size - 50;
+  $canvas.width = $size * 9 / 10;
   $canvasContainer.style['width'] = $size + 'px';
-  $canvasContainer.style['height'] = $size - 50 + 'px';
+  $canvasContainer.style['height'] = $size * 9 / 10 + 'px';
 }
 
 function initParams() {
@@ -123,22 +133,22 @@ function drawEnvironment(shrinkParams) {
   $springNextX = $springCurrentX + $stretchUnit * shrinkParams;
 
   /* Initial Line */
-  drawLine(50, 175, $springMinX, 175);
-  drawLine(70, 175, $springCurrentX, $springMaxY);
+  drawLine($size / 10, $size / 20 * 7, $springMinX, $size / 20 * 7);
+  drawLine($size / 50 * 7, $size / 20 * 7, $springCurrentX, $springMaxY);
   for (var i = 1; i <= 20; i++) {
     drawLine($springCurrentX, (i % 2 == 0 ? $springMinY : $springMaxY), $springNextX, (i % 2 == 0 ? $springMaxY : $springMinY));
     $springCurrentX = $springNextX;
     $springNextX = $springCurrentX + $stretchUnit * shrinkParams;
   }
-  drawLine($springCurrentX, $springMaxY, $springNextX, 175);
-  drawLine($springNextX, 175, $springNextX + 20, 175);
+  drawLine($springCurrentX, $springMaxY, $springNextX, $size / 20 * 7);
+  drawLine($springNextX, $size / 20 * 7, $springNextX + $size / 25, $size / 20 * 7);
   if (!$springMaxX || $springNextX > $springMaxX) { $springMaxX = $springNextX; }
-  $springNextX += 20;
+  $springNextX += $size / 25;
 
   /* Draw Box */
-  drawLine($springNextX, 150, $springNextX, 150 + $boxSize);
-  drawLine($springNextX + $boxSize, 150, $springNextX + $boxSize, 150 + $boxSize);
-  drawLine($springNextX, 150, $springNextX + $boxSize, 150);
+  drawLine($springNextX, $size / 10 * 3, $springNextX, $size / 10 * 3 + $boxSize);
+  drawLine($springNextX + $boxSize, $size / 10 * 3, $springNextX + $boxSize, $size / 10 * 3 + $boxSize);
+  drawLine($springNextX, $size / 10 * 3, $springNextX + $boxSize, $size / 10 * 3);
 
   /* Update Energy Chart */
   updateEnergyBarChart(shrinkParams);
@@ -150,10 +160,10 @@ function setMotion() {
     $degree += $motionRate;
     if ($degree == 360) { $degree = 0; }
     clearAll();
-    $extension *= Math.exp(-($dampRate * $counter /1000));
+    $extension *= Math.exp(-($dampRate * $counter / 1000));
     $strength = $extension * (1 + Math.sin(degToRad($degree)));
     drawEnvironment($strength);
-    $boxElement.style['width'] = $springMaxX - $springMinX + 20 + $boxSize + 'px';
+    $boxElement.style['width'] = $springMaxX - $springMinX + $size / 25 + $boxSize + 'px';
     $counter++;
   }, $speedRate);
 }
@@ -165,47 +175,47 @@ function unsetMotion() {
 
 function drawMotionChart() {
   /* Main Motion Chart */
-  drawLine(50, 100, 50, 200);
-  drawLine(50, 200, 450, 200);
-  addText('Drag the Box to Modify String\'s Tension', 50, 75, 20);
-  addText('X Position', 390, 220, 12)
+  drawLine($size / 10, $size / 5, $size / 10, $size / 2.5);
+  drawLine($size / 10, $size / 2.5, $size / 10 * 9, $size / 2.5);
+  addText('Drag the Box to Modify String\'s Tension', $size / 10, $size / 20 * 3, $size / 25);
+  addText('X Position', $size / 50 * 39, $size / 25 * 11, $size / 125 * 3);
 
   /* Energy Bar Chart */
-  addText('Energy Bar Chart', 85, 245, 15);
-  drawLine(50, 250, 50, 375);
-  drawLine(50, 375, 250, 375);
-  addText('100%', 15, $energy100YPos, 10);
-  addText('75%', 25, $energy100YPos + 30, 10);
-  addText('50%', 23, $energy100YPos + 60, 10);
-  addText('25%', 25, $energy100YPos + 90, 10);
-  addText('0%', 29, $energy100YPos + 120, 10);
-  addText('Potential', 125, 400, 12);
-  addText('Kinetic', 190, 400, 12);
-  addText('Total', 75, 400, 12);
+  addText('Energy Bar Chart', $size / 100 * 17, $size / 100 * 49,  $size / 100 * 3);
+  drawLine($size / 10, $size / 2, $size / 10, $size / 4 * 3);
+  drawLine($size / 10, $size / 4 * 3, $size / 2, $size / 4 * 3);
+  addText('100%', $size / 100 * 3, $energy100YPos, $size / 50);
+  addText('75%', $size / 20, $energy100YPos + $size / 50 * 3, $size / 50);
+  addText('50%', $size / 500 * 23, $energy100YPos + $size / 50 * 3 * 2, $size / 50);
+  addText('25%', $size / 20, $energy100YPos + $size / 50 * 3 * 3, $size / 50);
+  addText('0%', $size / 500 * 29, $energy100YPos + $size / 50 * 3 * 4, $size / 50);
+  addText('Potential', $size / 4, $size / 5 * 4, $size / 125 * 3);
+  addText('Kinetic', $size / 50 * 19, $size / 5 * 4, $size / 125 * 3);
+  addText('Total', $size / 20 * 3, $size / 5 * 4, $size / 125 * 3);
 
   /* Energy Line Chart */
-  addText('Energy Line Chart', 300, 245, 15);
-  drawLine($lineChartStart, 250, $lineChartStart, 375);
-  drawLine($lineChartStart, 375, $lineChartEnd + 10, 375);
+  addText('Energy Line Chart', $size / 5 * 3, $size / 100 * 49, $size / 100 * 3);
+  drawLine($lineChartStart, $size / 2, $lineChartStart, $size / 4 * 3);
+  drawLine($lineChartStart, $size / 4 * 3, $lineChartEnd + 10, $size / 4 * 3);
 }
 
 function updateEnergyBarChart(shrinkParams) {
   $energyTotalBarHeight = $extension * 2 * $energyBarChartMaxHeight;
-  drawLine(90, 374, 90, 374 - $energyTotalBarHeight, '#f9ff8d', 30);
+  drawLine($size / 50 * 9, $size / 250 * 187, $size / 50 * 9, $size / 250 * 187 - $energyTotalBarHeight, '#f9ff8d', $size / 50 * 3);
   $energyKineticBarHeight = (shrinkParams - 0.11) * $energyBarChartMaxHeight;
   $energyKineticYPoints.unshift($energyKineticBarHeight);
   if ($energyKineticYPoints.length > $totalLineChartData) { $energyKineticYPoints.pop(); }
-  drawLine(210, 374, 210, 374 - $energyKineticBarHeight, '#ff9aaa', 30); 
+  drawLine($size / 50 * 21, $size / 250 * 187, $size / 50 * 21, $size / 250 * 187 - $energyKineticBarHeight, '#ff9aaa', $size / 50 * 3); 
   $energyPotentialBarHeight = $energyTotalBarHeight - $energyKineticBarHeight;
   $energyPotentialYPoints.unshift($energyPotentialBarHeight);
   if ($energyPotentialYPoints.length > $totalLineChartData) { $energyPotentialYPoints.pop(); }
-  drawLine(150, 374, 150, 374 - $energyPotentialBarHeight, '#9affef', 30);
+  drawLine($size / 10 * 3, $size / 250 * 187, $size / 10 * 3, $size / 250 * 187 - $energyPotentialBarHeight, '#9affef', $size / 50 * 3);
 }
 
 function updateEnergyLineChart() {
   for (var i = 0; i < $energyPotentialYPoints.length; i++) {
-    drawDot($lineChartStart + 1 + i, 373 - $energyPotentialYPoints[i], '#9affef');
-    drawDot($lineChartStart + 1 + i, 373 - $energyKineticYPoints[i], '#ff9aaa');
+    drawDot($lineChartStart + 1 + i, $size / 500 * 373 - $energyPotentialYPoints[i], '#9affef');
+    drawDot($lineChartStart + 1 + i, $size / 500 * 373 - $energyKineticYPoints[i], '#ff9aaa');
   }
 }
 
