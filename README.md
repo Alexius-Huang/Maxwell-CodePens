@@ -8,10 +8,12 @@ Here is the list of the pens' source code, enjoy =) ~
 - 2017.01.11 <a href="http://codepen.io/maxwell_alexius/pen/KaVENm">Game of Life</a>
 - 2017.01.13 <a href="http://codepen.io/maxwell_alexius/pen/GrqKZQ">Simple Harmonic Motion</a>
 - 2017.01.16 <a href="http://codepen.io/maxwell_alexius/pen/oBzppK">Tetris</a>
+- 2017.01.22 <a href="http://codepen.io/maxwell_alexius/pen/PWmJmw">Brick Breaker</a>
 
 Screenshots :
 
 <img src="img/2048_by_Maxwell_Alexius.png" alt="2048 code" />
 <img src="img/Game_of_Life.png" alt="Game of Life" />
 <img src="img/Simple_Harmonic_Motion.png" alt="Simple Harmonic Motion" />
-<img src="img/Tetris.png" alt="tetris">
+<img src="img/Tetris.png" alt="tetris" />
+<img src="img/Brick_Breaker.png" alt="brick breaker" />
