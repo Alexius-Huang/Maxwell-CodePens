@@ -89,8 +89,8 @@ var $source = {
     var ratio = Math.sin(degToRad($source.currentDegree));
     var baseColor = $circle.gradient.base;
     var middleColor = (255 - baseColor) / 2;
-    $circle.gradient.left = String(parseInt(baseColor + middleColor * (1 - ratio))) + ', ' + baseColor + ', ' + String(parseInt(baseColor + middleColor * (1 + ratio)));
-    $circle.gradient.right = String(parseInt(baseColor + middleColor * (1 + ratio))) + ', ' + baseColor + ', ' + String(parseInt(baseColor + middleColor * (1 - ratio)));
+    $circle.gradient.right = String(parseInt(baseColor + middleColor * (1 - ratio))) + ', ' + baseColor + ', ' + String(parseInt(baseColor + middleColor * (1 + ratio)));
+    $circle.gradient.left = String(parseInt(baseColor + middleColor * (1 + ratio))) + ', ' + baseColor + ', ' + String(parseInt(baseColor + middleColor * (1 - ratio)));
   }
 
 $(document).ready(function() {
