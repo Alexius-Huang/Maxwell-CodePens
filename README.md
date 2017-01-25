@@ -9,6 +9,7 @@ Here is the list of the pens' source code, enjoy =) ~
 - 2017.01.13 <a href="http://codepen.io/maxwell_alexius/pen/GrqKZQ">Simple Harmonic Motion</a>
 - 2017.01.16 <a href="http://codepen.io/maxwell_alexius/pen/oBzppK">Tetris</a>
 - 2017.01.22 <a href="http://codepen.io/maxwell_alexius/pen/PWmJmw">Brick Breaker</a>
+- 2017.01.25 <a href="http://codepen.io/maxwell_alexius/pen/ZLJabv">Slippy Snake</a>
 
 Screenshots :
 
@@ -17,3 +18,4 @@ Screenshots :
 <img src="img/Simple_Harmonic_Motion.png" alt="Simple Harmonic Motion" />
 <img src="img/Tetris.png" alt="tetris" />
 <img src="img/Brick_Breaker.png" alt="brick breaker" />
+<img src="img/Snake.png" alt="snake">
