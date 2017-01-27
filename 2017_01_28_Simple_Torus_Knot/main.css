@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:300,800');
+body { margin: 0; }
+canvas { width: 100%; height: 100%; overflow-x: hidden; overflow-y: hidden; }
+#info {
+  position: absolute;
+  top: 5vh;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+  display: block;
+  color: white;
+}
+#info h1 { 
+  font-family: 'Dosis';
+  font-style: bold;
+  letter-spacing: 1pt;
+}
+#info p {
+  padding: 5pt 30pt;
+  font-family: 'Dosis';
+  letter-spacing: 1pt;
+}
