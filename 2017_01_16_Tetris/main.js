@@ -120,7 +120,7 @@ function initGame() {
     }
   }
   $score = 0;
-  $scoreContainer = $('#score');
+  $scoreContainer = document.getElementById('score');
   $currentTetris = null;
   $currentSpeed = 100 + (100 - getCurrentSpeedInput()) * 10;
 }

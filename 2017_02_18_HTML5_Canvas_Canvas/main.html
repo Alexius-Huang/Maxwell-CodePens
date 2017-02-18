@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=0.9, maximum-scale=0.9, user-scalable=no">
+    <title>HTML5 Canvas "Canvas" by Maxwell Alexius</title>
+  
+  <!-- Import jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  
+  <!-- Import HammerJS CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
+  <!-- Import Spectrum CSS & JS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
+  
+  <!-- Import Custom CSS & JS -->
+  <link rel="stylesheet" href="./main.css">
+  <script src="./main.js"></script>
+  
+  <!-- Import Font -->
+  <link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
+
+</head>
+<body>
+  <div id="control-panel">
+    <h3 id="control-panel-header">HTML5 Canvas Canvas</h3>
+    <div id="color-picker"></div><br/>
+    <div id="button-group">
+      <div>
+        <label for="pen-width">Pen / Erasor Size</label>
+        <input type="range" value="15" min="1" max="50" id="pen-size-input" /><br/>
+        <button id="pen-btn">Pen</button>
+        <button id="eraser-btn">Eraser</button>
+        <button id="clear-btn">Clear All</button>
+        <br/>
+      </div>
+    </div>
+  </div>
+  <canvas id="main-canvas"></canvas>
+</body>
+</html>
