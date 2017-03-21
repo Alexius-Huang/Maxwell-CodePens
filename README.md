@@ -15,7 +15,7 @@ Here is the list of the pens' source code, enjoy =) ~
 - 2017.02.02 <a href="http://codepen.io/maxwell_alexius/pen/MJVrqv">Event Horizon</a>
 - 2017.02.17 <a href="http://codepen.io/maxwell_alexius/pen/WRYWNp">HTML5 Canvas Canvas</a>
 - 2017.03.16 <a href="http://codepen.io/maxwell_alexius/pen/WpXejG">Visualized Bubble Sort</a>
-- 2017.03.21 <a href="http://codepen.io/maxwell_alexius/pen/peLbRR">Visualized Bubble Sort</a>
+- 2017.03.21 <a href="http://codepen.io/maxwell_alexius/pen/peLbRR">Visualized Merge Sort</a>
 
 Screenshots :
 
