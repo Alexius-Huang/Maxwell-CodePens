@@ -1,0 +1,51 @@
+body, html {
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Vetically Centering */
+.main {
+  height: 100%;
+  width: 100%;
+  display: table;
+}
+.wrapper {
+  display: table-cell;
+  height: 100%;
+  vertical-align: middle;
+}
+
+h2 {
+  color: #ddd;
+  text-align: center;
+}
+canvas#main-canvas {
+  display: block;
+  margin: 0 auto;
+}
+div.btn-group {
+  text-align: center;
+  padding: 10px;
+}
+button {
+  background-color: hsl(45, 60%, 50%);
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  transition: background-color 0.5s, border 0.5s;
+}
+button:hover {
+  background-color: #333;
+  border: 1px solid #ccc;
+}
+button:disabled {
+  background-color: #333;
+  border: 1px solid #ccc;
+  color: #777;
+}
