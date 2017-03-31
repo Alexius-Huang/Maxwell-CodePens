@@ -18,6 +18,7 @@ Here is the list of the pens' source code, enjoy =) ~
 - 2017.03.21 <a href="http://codepen.io/maxwell_alexius/pen/peLbRR">Visualized Merge Sort</a>
 - 2017.03.22 <a href="http://codepen.io/maxwell_alexius/pen/zZWbNE">Visualized Comb Sort</a>
 - 2017.03.26 <a href="http://codepen.io/maxwell_alexius/pen/peVrMx">Visualized Quick Sort</a>
+- 2017.04.01 <a href="http://codepen.io/maxwell_alexius/pen/jBXpRK">Visualized Heap Sort</a>
 
 Screenshots :
 
@@ -34,3 +35,4 @@ Screenshots :
 <img src="img/Visualized_Merge_Sort.png" alt="visualized merge sort" />
 <img src="img/Visualized_Comb_Sort.png" alt="visualized comb sort" />
 <img src="img/Visualized_Quick_Sort.png" alt="visualized quick sort" />
+<img src="img/Visualized_Heap_Sort.png" alt="visualized heap sort" />
