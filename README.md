@@ -19,7 +19,7 @@ Here is the list of the pens' source code, enjoy =) ~
 - 2017.03.22 <a href="http://codepen.io/maxwell_alexius/pen/zZWbNE">Visualized Comb Sort</a>
 - 2017.03.26 <a href="http://codepen.io/maxwell_alexius/pen/peVrMx">Visualized Quick Sort</a>
 - 2017.04.01 <a href="http://codepen.io/maxwell_alexius/pen/jBXpRK">Visualized Heap Sort</a>
-- 2017.05.01 <a href="https://codepen.io/maxwell_alexius/pen/qmmKOj">Visualized Heap Sort</a>
+- 2017.05.01 <a href="https://codepen.io/maxwell_alexius/pen/qmmKOj">Orbital Image Gallery</a>
 
 Screenshots :
 
