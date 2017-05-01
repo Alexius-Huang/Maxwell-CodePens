@@ -1,0 +1,75 @@
+html, body {
+  margin: 0;
+  background-color: #333;
+}
+#title {
+  font-family: 'Quicksand', sans-serif;
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  top: 10vh;
+  color: white;
+}
+button {
+  height: 50px;
+  font-size: 20px;
+  line-height: 50px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: auto;
+  position: absolute;
+  background-color: #555;
+  border: 1px solid #555;
+  color: white;
+  transition: .5s;
+  outline: none;
+  font-family: 'Quicksand', sans-serif;
+}
+button:hover {
+  background-color: #777;
+  border: 1px solid #ccc;
+  transition: .5s;
+}
+#right-button {
+  width: 100px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+#left-button {
+  width: 100px;
+  left: 0; 
+  top: 0;
+  bottom: 0;
+}
+#right-button.disabled, #left-button.disabled {
+  pointer-events: none;
+  background-color: #222;
+  border: 1px solid #333;
+  color: #555;
+  transition: .5s;
+}
+#auto-play-trigger {
+  width: 200px;
+  left: 0;
+  right: 0;
+  bottom: 10vh;
+}
+#img-wrapper {
+  box-sizing: border-box;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+.gallery-img {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;  
+}
