@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous|Raleway');
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  font-family: 'Righteous', cursive;
+}
+body {
+  position: relative;
+}
+div {
+  margin: 0;
+  padding: 0;
+}
+#mine-sweeper-grid {
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+div#statistic {
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  text-align: center;
+}
+div#statistic > div {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 120px;
+  height: 50px;
+  text-align: center;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+div#statistic > div > p {
+  margin: 10px 0;
+  color: #eee;
+  height: 30px;
+  line-height: 30px;
+  background-color: #555;
+  transition: .25s;
+}
+div#statistic > div > p#flags-count.too-much-flags {
+  background-color: #ff7777;
+  transition: .25s;
+}
+div#statistic > div > p#flags-count.too-much-flags:after {
+  content: ' (Exceeded)';
+  font-size: 10px;
+}
+.grid-unit {
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ccc;
+  transition: .25s;
+}
+.grid-unit.enabled:hover {
+  background-color: #eee;
+  transition: .25s;
+}
+.grid-unit.swept {
+  pointer-events: none;
+  color: #eee;
+  transition: .25s;
+  background-color: #666;
+}
+.grid-unit.swept.game-over {
+  background-color: #111;
+}
+.grid-unit.swept-num-0 { background-color: #444; }
+.grid-unit.swept-num-1 { color: #ffe5e5; }
+.grid-unit.swept-num-2 { color: #ffb2b2; }
+.grid-unit.swept-num-3 { color: #ff9999; }
+.grid-unit.swept-num-4 { color: #ff7f7f; }
+.grid-unit.swept-num-5 { color: #ff6666; }
+.grid-unit.swept-num-6 { color: #ff4c4c; }
+.grid-unit.swept-num-7 { color: #ff3232; }
+.grid-unit.swept-num-8 { color: #ff0000; }
+.grid-unit.flagged {
+  background-color: #ffd8af;
+  transition: .25s;
+}
+.grid-unit.flagged.game-over {
+  background-color: #77ff77;
+}
+.grid-unit.flagged.game-over.not-mine {
+  background-color: #ff7777;
+}
+.grid-unit.mine {
+  pointer-events: none;
+  background-color: #ff3232;
+  color: #eee;
+  transition: .25s;
+}
+.grid-unit.mine.game-over {
+  background-color: #833;
+}
+.btn-group {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 0;
+}
+.btn-group > button {
+  box-sizing: border-box;
+  width: 100px;
+  margin: 0;
+  bottom: 0;
+  padding: 10px 0;
+  font-size: 12px;
+  border: none;
+  background-color: #555;
+  color: white;
+  transition: .25s;
+}
+.btn-group > button:hover {
+  background-color: #ccc;
+  color: #555;
+  transition: .25s;
+}
+.btn-group > button:focus {
+  outline: none;
+}
+div.modal {
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: 0.5s;
+  font-family: 'Raleway', sans-serif;
+}
+div.modal > .wrapper {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  color: white;
+  background-color: rgba(90, 90, 90, 0.9);
+  transition: .5s;
+  text-align: center;
+  margin-left: -150px;
+  width: 300px;
+}
+div#success-modal > .wrapper {
+  margin-top: -75px;
+  height: 150px;
+}
+div#success-modal > .wrapper > button#resume-btn {
+  background-color: #333;
+  color: #eee;
+  width: 300px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  transition: .25s;
+}
+div#success-modal > .wrapper > button#resume-btn:hover {
+  background-color: #eee;
+  color: #333;
+  transition: .25s;
+}
+div#new-game-modal > .wrapper {
+  margin-top: -175px;
+  height: 350px;
+}
+div#new-game-modal > .wrapper > label {
+  margin-bottom: 15px;
+  display: block;
+  vertical-align: middle;
+  padding-top: 5px;
+  transition: .25s;
+}
+div#new-game-modal > .wrapper > label > small {
+  font-size: 11px;
+  margin-left: 5px;
+}
+div#new-game-modal > .wrapper > label > input {
+  text-align: center;
+  margin-top: 5px;
+  width: 300px;
+  box-sizing: border-box;
+  padding: 5px 0;
+  background-color: #333;
+  color: white;
+  border: none;
+  transition: .25s;
+}
+div#new-game-modal > .wrapper > label > input:focus {
+  outline: none;
+  background-color: #eee;
+  color: #333;
+  transition: .25s;
+}
+div#new-game-modal > .wrapper > button#start-game {
+  box-sizing: border-box;
+  width: 300px;
+  height: 60px;
+  font-size: 20px;
+  line-height: 60px;
+  vertical-align: middle;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: none;
+  background-color: #333;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  transition: .25s;
+}
+div#new-game-modal > .wrapper > button#start-game:hover {
+  background-color: #eee;
+  color: #333;
+  transition: .25s;
+}
+div#new-game-modal > .wrapper > label.error {
+  background-color: rgba(255, 70, 70, 0.6);
+  transition: .25s;
+}
+div#new-game-modal > .wrapper > label.error > input {
+  background-color: rgba(255, 90, 90, 0.6);
+  transition: .25s;
+}

@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var imgs = [];
   var imgCount = $('.gallery-img').length;
-  var maxZIndex = Math.ceil(imgCount / 2);
+  var maxZIndex = Math.floor(imgCount / 2) + 1;
   var degreePerImage = 360 / imgCount;
   var galleryRadius = 1000;
   var imgSize = 250;
@@ -17,7 +17,7 @@ $(document).ready(function() {
     var imgObj = {
       element: $('#img-' + i),
       angle: degreePerImage * (i - 1),
-      zIndex: Math.abs(maxZIndex - i)
+      zIndex: (maxZIndex - i + 1 > 0) ? (maxZIndex - i + 1) : (i - maxZIndex) 
     };
     imgObj.left = parseInt(imgObj.element.css('left')) + galleryRadius * Math.sin(degToRad(imgObj.angle));
     imgObj.opacity = Math.abs(imgObj.angle - 180) / 180;
@@ -25,9 +25,9 @@ $(document).ready(function() {
     imgs.push(imgObj);
   }
 
+
   for (var j = 0; j < imgCount; j++) {
     var imgElement = imgs[j].element;
-    var imgAngle = imgs[j].angle;
     imgElement.css({
       'left': imgs[j].left,
       'z-index': imgs[j].zIndex,

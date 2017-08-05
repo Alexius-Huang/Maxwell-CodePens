@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="main.css">
+  <script src="main.js"></script>
+  <title>Mine Game</title>
+</head>
+<body>
+  <div id="statistic">
+    <div>
+      🚩  Flags<br/>
+      <p id="flags-count">0</p>
+    </div>
+    <div>
+      ✅  Swept Units
+      <p id="swept-unit-count">0</p>
+    </div>
+    <div>
+      🕑  Time
+      <p id="time-counter">00:00:00</p>
+    </div>
+  </div>
+  <div id="mine-sweeper-grid"></div>
+  <div class="btn-group">
+    <button id="change-mode">Trigger Mode</button>
+    <button id="new-game">New Game</button>
+  </div>
+
+  <div id="new-game-modal" class="modal">
+    <div class="wrapper">
+      <h1>New Game</h1>
+      <label>
+        Rows <small>1 ~ 30 Rows</small><br/>
+        <input name="rows" type="number" min="1" max="30" value="20">
+      </label>
+      <label>
+        Columns <small>1 ~ 30 Columns</small><br/>
+        <input name="cols" type="number" min="1" max="30" value="20">
+      </label>
+      <label>
+        Mines <small>1 ~ <span id="maximum-mines">100</span> Mines</small><br/>
+        <input name="mines" type="number" min="1" max="5000" value="50">
+      </label>
+      <button id="start-game">Start Game</button>
+    </div>
+  </div>
+
+  <div id="success-modal" class="modal">
+    <div class="wrapper">
+      <h1>Congratulations!</h1>
+      <p>You've made it in <span id="result-time"></span> !</p>
+      <button id="resume-btn">Resume</button>
+    </div>
+  </div>
+</body>
+</html>
