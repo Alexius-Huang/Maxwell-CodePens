@@ -20,6 +20,8 @@ Here is the list of the pens' source code, enjoy =) ~
 - 2017.03.26 <a href="http://codepen.io/maxwell_alexius/pen/peVrMx">Visualized Quick Sort</a>
 - 2017.04.01 <a href="http://codepen.io/maxwell_alexius/pen/jBXpRK">Visualized Heap Sort</a>
 - 2017.05.01 <a href="https://codepen.io/maxwell_alexius/pen/qmmKOj">Orbital Image Gallery</a>
+- 2017.06.27 Network Space
+- 2017.08.06 Mine Sweeper
 
 Screenshots :
 
@@ -38,3 +40,5 @@ Screenshots :
 <img src="img/Visualized_Quick_Sort.png" alt="visualized quick sort" />
 <img src="img/Visualized_Heap_Sort.png" alt="visualized heap sort" />
 <img src="img/Orbital_Image_Gallery.png" alt="orbital image gallery" />
+<img src="img/Network.png" alt="network" />
+<img src="img/Mine_Sweeper.png" alt="mine sweeper" />
