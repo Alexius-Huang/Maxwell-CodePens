@@ -9,6 +9,7 @@ var $game = {
   statistic: null,
   btnGroup: null,
   newGameBtn: null,
+  hintBtn:null,
   newGameModal: null,
   startGameBtn: null,
   successModal: null,
@@ -156,6 +157,7 @@ function initGameElements() {
   $game.modeBtn      = document.getElementById('change-mode');
   $game.newGameBtn   = document.getElementById('new-game');
   $game.newGameModal = document.getElementById('new-game-modal');
+  $game.hintBtn      = document.getElementById('hint');
   $game.startGameBtn = document.getElementById('start-game');
   $game.successModal = document.getElementById('success-modal');
   $game.resumeBtn    = document.getElementById('resume-btn');
@@ -190,6 +192,20 @@ function initControlSystem() {
   $game.newGameBtn.addEventListener('click', function(event) {
     $game.newGameModal.style.display = 'block';
     $game.stopTimeCounter();
+  });
+
+  $game.hintBtn.addEventListener('click',function(){
+    var hint = $mineSweeperAI.getHint();
+    if(hint){
+      var unit = $grid.getUnit(hint.row,hint.col);
+      if(hint.type == 'mine'){
+        unit.addClass('hint-mine')
+      }else{
+        unit.addClass('hint-safe')
+      }
+    }else{
+      alert("can't find any Hint! ")
+    }
   });
 
   var inputEvent = function(event) {

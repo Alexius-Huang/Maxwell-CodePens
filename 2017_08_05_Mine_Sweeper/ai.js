@@ -51,13 +51,13 @@ $mineSweeperAI = {
 					if(r == unitData.row && c == unitData.col)continue;
 					surroundUnit = $grid.getUnit(r,c);
 					if(surroundUnit == null)continue;
-					if(surroundUnit.hasClass("flagged")){
+					if(surroundUnit.hasClass("flagged") || surroundUnit.hasClass("hint-mine")){
 						flaggedCounter ++;
-					}
-					if(surroundUnit.hasClass("enabled")){
+					}else 	if(surroundUnit.hasClass("enabled") && !surroundUnit.hasClass("hint-safe")){
 						enabledCounter++;
 						enabledPosArray.push(new $mineSweeperAI.Pos(r,c));
 					}
+
 				}
 			}
 			// strategy 1:
