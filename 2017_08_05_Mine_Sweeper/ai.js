@@ -12,6 +12,28 @@ $mineSweeperAI = {
 			return false
 		}
 	},
+	minePairArray:[],
+	MinePair:function(mineCounter){
+		this.mineCounter = mineCounter;
+		this.posArray = [];
+		this.isInThisArray = function(minePairArray){
+			for(let i=0 ; i<minePairArray.length ; i++){
+				var mineCounter = minePairArray[i].mineCounter;
+				var posArray = minePairArray[i].posArray;
+				if(this.mineCounter != mineCounter)continue;
+				if(this.posArray.length != posArray.length)continue;
+				for(j = 0 ; j<this.posArray.length;j++){
+					if( !this.posArray[j].isInThisArray(posArray)){
+						break;
+					}
+				}
+				if(j == this.posArray.length-1){
+					return true;
+				}
+			}
+			return false;
+		}
+	},
     getUnitData:function(unit){
 		// format: position-<row>-<col>
 		var idString = unit.id;
@@ -37,7 +59,8 @@ $mineSweeperAI = {
 		var sweptUnits = document.querySelectorAll(".swept");
 		var findMinePos = [];
 		var findSafePos = [];
-	
+		var newMinePairArray = [];
+		
 		for(let index=0 ; index<sweptUnits.length ; index++){
 			var unit = sweptUnits[index];
 			var unitData = $mineSweeperAI.getUnitData(unit);
@@ -53,7 +76,7 @@ $mineSweeperAI = {
 					if(surroundUnit == null)continue;
 					if(surroundUnit.hasClass("flagged") || surroundUnit.hasClass("hint-mine")){
 						flaggedCounter ++;
-					}else 	if(surroundUnit.hasClass("enabled") && !surroundUnit.hasClass("hint-safe")){
+					}else if(surroundUnit.hasClass("enabled") && !surroundUnit.hasClass("hint-safe")){
 						enabledCounter++;
 						enabledPosArray.push(new $mineSweeperAI.Pos(r,c));
 					}
@@ -75,8 +98,49 @@ $mineSweeperAI = {
 						findSafePos.push(enabledPos);
 					}
 				}
+			}else{
+				// strategy 2		
+				for(let i = 0;i<this.minePairArray.length;i++){
+					var minePair = this.minePairArray[i];
+					var minePairPosArray = minePair.posArray;
+					for( window.j=0 ; window.j<minePairPosArray.length ; window.j++ ){
+						pos = minePairPosArray[window.j];
+						if(!pos.isInThisArray(enabledPosArray))break;
+					}
+					if(window.j == minePairPosArray.length){
+						var filteredMineCounter = unitData.mineCounter - minePair.mineCounter;
+						var filteredEnabledCounter = enabledCounter - minePairPosArray.length;
+						if(filteredEnabledCounter == 0)continue;
+						if(filteredMineCounter - flaggedCounter  == filteredEnabledCounter){
+							for(let k =0;k<enabledPosArray.length;k++){
+								var enabledPos = enabledPosArray[k];
+								if(!enabledPos.isInThisArray(findMinePos) &&  !enabledPos.isInThisArray(minePairPosArray) ){
+									findMinePos.push(enabledPos);
+								}
+							}
+						}else if(filteredMineCounter - flaggedCounter == 0){
+							for(let k=0;k<enabledPosArray.length;k++){
+								var enabledPos = enabledPosArray[k];
+								if(!enabledPos.isInThisArray(findSafePos)&&  !enabledPos.isInThisArray(minePairPosArray) ){
+									findSafePos.push(enabledPos);
+								}
+							}
+						}
+					}
+				}
+			}
+			//save findMinePair
+			if(unitData.mineCounter - flaggedCounter == (enabledCounter - 1) ){
+				var findMinePair = new $mineSweeperAI.MinePair(unitData.mineCounter - flaggedCounter);
+				for(let i = 0 ; i<enabledPosArray.length;i++){
+					findMinePair.posArray.push(enabledPosArray[i]);
+				}
+				if(!findMinePair.isInThisArray(newMinePairArray)){
+					newMinePairArray.push(findMinePair)
+				}
 			}
 		}
+		this.minePairArray = newMinePairArray;
 		return {
 			findMinePos:findMinePos,
 			findSafePos:findSafePos
@@ -90,6 +154,9 @@ $mineSweeperAI = {
 		var findResult = $mineSweeperAI.findMineAndSafePos()
 		var findMinePos = findResult.findMinePos;
 		var findSafePos = findResult.findSafePos;
+		/*	the 
+			In order to let computer can find minepair and use minepair to find the other unit status 
+		*/
 		if(findMinePos.length==0 && findSafePos.length==0){
 			var findResult = $mineSweeperAI.findMineAndSafePos()
 			var findMinePos = findResult.findMinePos;
