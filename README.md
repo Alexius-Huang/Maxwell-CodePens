@@ -1,7 +1,6 @@
-# Maxwell's CodePen Projects
----
+<h1 align="center">Maxwell's CodePen Projects</h1>
 
-Here is the list of the pens' source code, enjoy =) ~
+<h3 align="center">Here is the list of my pens' source code, enjoy =)</h3>
 
 - 2017.01.02 <a href="http://codepen.io/maxwell_alexius/pen/jyNvYB">Horizontal List with My Skill Sets</a>
 - 2017.01.05 <a href="http://codepen.io/maxwell_alexius/pen/BpaKKp">2048 by Maxwell Alexius</a>
@@ -20,8 +19,9 @@ Here is the list of the pens' source code, enjoy =) ~
 - 2017.03.26 <a href="http://codepen.io/maxwell_alexius/pen/peVrMx">Visualized Quick Sort</a>
 - 2017.04.01 <a href="http://codepen.io/maxwell_alexius/pen/jBXpRK">Visualized Heap Sort</a>
 - 2017.05.01 <a href="https://codepen.io/maxwell_alexius/pen/qmmKOj">Orbital Image Gallery</a>
-- 2017.06.27 Network Space
-- 2017.08.06 Mine Sweeper
+- 2017.06.27 <a href="https://codepen.io/maxwell_alexius/pen/prRvvO">Network Space</a>
+- 2017.08.06 <a href="https://codepen.io/maxwell_alexius/pen/VzPYYa">Mine Sweeper</a>
+- 2017.09.03 <a href="https://codepen.io/maxwell_alexius/pen/oeVxod">Python Syntax Highlighter</a>
 
 Screenshots :
 
@@ -42,3 +42,4 @@ Screenshots :
 <img src="img/Orbital_Image_Gallery.png" alt="orbital image gallery" />
 <img src="img/Network.png" alt="network" />
 <img src="img/Mine_Sweeper.png" alt="mine sweeper" />
+<img src="img/Python_Syntax_Highlighter.png" alt="python syntax highlighter" />
