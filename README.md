@@ -22,7 +22,7 @@
 - 2017.06.27 <a href="https://codepen.io/maxwell_alexius/pen/prRvvO">Network Space</a>
 - 2017.08.06 <a href="https://codepen.io/maxwell_alexius/pen/VzPYYa">Mine Sweeper</a>
 - 2017.09.03 <a href="https://codepen.io/maxwell_alexius/pen/oeVxod">Python Syntax Highlighter</a>
-- 2017.09.08 <a href="https://codepen.io/maxwell_alexius/full/EwEVXj/">Linear Regression - Gradient Descent</a>
+- 2017.10.08 <a href="https://codepen.io/maxwell_alexius/full/EwEVXj/">Linear Regression - Gradient Descent</a>
 
 Screenshots :
 
