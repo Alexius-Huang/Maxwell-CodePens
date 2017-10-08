@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Linear Regression by Maxwell Alexius</title>
+
+  <link rel="stylesheet" href="./main.css" />
+  <script src="./main.js"></script>
+</head>
+<body>
+  <h1>Linear Regression with One Variable</h1>
+
+  <svg width="500" height="500" id="diagram"></svg>
+
+  <table id="dataset">
+    <caption>Scores of the Exams of Students</caption>
+    <thead>
+      <tr>
+        <th>Midterm (x)</th>
+        <th>Final (y)</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody id="table-records">
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td colspan="3">
+          <label>
+            Alpha <input id="alpha-input" type="text" value="0.1">
+          </label>
+          <label>
+            Iterations <input id="iterations-input" type="text" value="3000">
+          </label>
+          <button id="help-btn">Help</button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <button id="new-record">New Record</button>
+          <button id="train-model">Train Model</button>
+          <button id="flush-data">Flush Data</button>
+          <button id="animate-mode">Animate</button>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div class="modal" id="error-modal">
+    <div class="modal-wrapper">
+      <div class="close-btn">X</div>
+      <div class="dialog-wrapper">
+        <h1>Oops!</h1>
+        <p class="error-msg">Something went wrong!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="help-modal">
+    <div class="modal-wrapper">
+      <div class="close-btn">X</div>
+      <div class="dialog-wrapper">
+        <h2>Linear Regression with One Variable</h2>
+        <p>
+          This example demonstrates that - given a set of data of students' midterm and final exam's scores.
+          By means of <span>Gradient Descent</span> algorithm, get the linear regression
+          result to predict the students' final exam's scores using their midterm exam's scores.  
+        </p>
+        <p>
+          In this simple application, you can <span>append data on the graph by directly clicking on the chart</span>
+          or use the <span class="btn">New Record</span> button.
+        </p>
+        <p>
+          To <span>generate the prediction result</span>, you can click the <span class="btn">Train Modal</span> button.
+        </p>
+        <p>
+          If you want to <span>reset and clear out all of the data</span>, just click the <span class="btn">Flush Data</span> button.
+        </p>
+        <p>
+          If you want to see <span>how gradient descent generate the result of regression line</span>, try the <span class="btn">Animate</span> button.
+        </p>
+        <p>Enjoy! :-) By <a target="_blank" href="https://github.com/Maxwell-Alexius">Maxwell Alexius</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

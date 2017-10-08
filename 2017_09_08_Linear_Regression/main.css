@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,500');
+
+html, body {
+  background-color: #333;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  font-weight: 300;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+body > h1 {
+  font-weight: 300;
+  font-size: 30pt;
+  margin: 0;
+  padding: 50pt;
+}
+h1, p {
+  margin: 0;
+}
+td, th {
+  padding: 0;
+}
+input:focus {
+  outline: none;
+}
+
+svg {
+  display: inline-block;
+  background-color: #222;
+}
+
+button {
+  background-color: #666;
+  border: 1pt solid #aaa;
+  color: #ddd;
+  height: 25pt;
+  line-height: 25pt;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 10pt;
+  padding: 0 12pt;
+  margin: 0;
+  border-radius: 1pt;
+  transition: .25s;
+  box-sizing: border-box;
+}
+button:hover {
+  transition: .25s;
+  color: #333;
+  background-color: #ddd;
+}
+button:focus {
+  outline: none;
+}
+
+table#dataset {
+  display: inline-block;
+  vertical-align: top;
+  background-color: #555;
+}
+table#dataset > caption {
+  height: 70px;
+  line-height: 70px;
+  font-size: 16pt;
+  line-height: 70px;
+  background-color: #444;
+}
+table#dataset > * {
+  width: 500px;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+table#dataset > thead {
+  height: 40px;
+  text-align: center;
+}
+table#dataset > thead > tr > th,
+table#dataset > tbody > tr > td {
+  height: 40px;
+  box-sizing: border-box;
+  width: 165px;
+  font-size: 12pt;
+  line-height: 40px;
+  display: inline-block;
+}
+table#dataset > tbody {
+  height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #444;
+  padding: 10pt;
+  box-sizing: border-box;
+}
+table#dataset > tbody > tr {
+  display: block;
+  transition: .25s;
+}
+table#dataset > tbody > tr + tr {
+  border-top: 1pt dashed #555;
+}
+table#dataset > tbody > tr:hover {
+  transition: .25s;
+  background-color: #555;
+}
+table#dataset > tbody > tr > td {
+  width: 157px;
+}
+table#dataset > tbody > tr > td > button {
+  font-size: 8pt;
+  width: 40pt;
+  height: 18pt;
+  line-height: 18pt;
+  padding: 0;
+  border: none;
+}
+table#dataset > tbody > tr > td > button:disabled {
+  color: #aaa;
+  background-color: #333;
+}
+table#dataset > tbody > tr > td > button + button {
+  margin-left: 3pt;
+}
+
+table#dataset > tbody > tr > td button.save-action:not(:disabled) {
+  background-color: #308C03;
+}
+table#dataset > tbody > tr > td button.save-action:hover:not(:disabled) {
+  background-color: #56FF02;
+  color: #fff;
+}
+table#dataset > tbody > tr > td button.edit-action:not(:disabled) {
+  background-color: #B19A02;
+}
+table#dataset > tbody > tr > td button.edit-action:hover:not(:disabled) {
+  background-color: #FAD000;
+  color: #fff;
+}
+table#dataset > tbody > tr > td button.delete-action:not(:disabled) {
+  background-color: #8C0305;
+}
+table#dataset > tbody > tr > td button.delete-action:hover:not(:disabled) {
+  background-color: #FF0000;
+  color: #fff;
+}
+
+table#dataset > tfoot {
+  box-sizing: border-box;
+  height: 140px;
+  padding-top: 10px;
+}
+table#dataset > tfoot > tr > td {
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+}
+table#dataset > tbody > tr > td,
+table#dataset > tfoot > tr > td {
+  text-align: center;
+}
+table#dataset > tfoot > tr > td {
+  width: 500px;
+}
+table#dataset > tfoot > tr > td button {
+  margin-left: 10pt;
+}
+table#dataset > tfoot > tr > td button:disabled {
+  background-color: #333;
+  color: #aaa;
+  border-color: #777;
+}
+table#dataset > tfoot > tr > td > label {
+  font-size: 12pt;
+}
+table#dataset > tfoot > tr > td > label + label {
+  margin-left: 7pt;
+}
+table#dataset > tfoot > tr > td > label > input {
+  font-size: 10pt;
+  background-color: #333;
+  color: white;
+  border: none;
+  width: 60pt;
+  height: 20pt;
+  line-height: 20pt;
+  text-align: center;
+  padding: 0 5pt;
+  margin-left: 5pt;
+  border-radius: 0;
+  box-sizing: border-box;
+  transition: .25s;
+}
+table#dataset > tfoot > tr > td > label > input:disabled {
+  color: #999;
+  background-color: #111;
+}
+table#dataset > tfoot > tr > td > label > input:focus {
+  background-color: #444;
+  border-radius: 10pt;
+  transition: .25s;
+}
+
+table#dataset > tbody > tr > td > input[type="text"] {
+  border: none;
+  background-color: #555;
+  height: 20pt;
+  line-height: 20pt;
+  color: #ddd;
+  padding: 0 10pt;
+  font-size: 10pt;
+  width: 30pt;
+  text-align: center;
+  transition: .25s;
+}
+table#dataset > tbody > tr > td > input[type="text"]:disabled {
+  color: #aaa;
+  background-color: #333;
+}
+table#dataset > tbody > tr:hover > td > input[type="text"]:not(:disabled) {
+  background-color: #777;
+  color: #ddd;
+  transition: .25s;
+}
+
+div.modal {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: .25s;
+  pointer-events: none;
+}
+div.modal > div.modal-wrapper {
+  width: 450px;
+  height: 200px;
+  background-color: #555;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+div.modal > div.modal-wrapper:before {
+  content: '';
+  display: inline-block;
+  height: 200px;
+  width: 0;
+  vertical-align: middle;
+}
+div.modal > div.modal-wrapper > div.close-btn {
+  pointer-events: auto;
+  display: inline-block;
+  position: absolute;
+  right: -20pt;
+  top: -20pt;
+  width: 40pt;
+  height: 40pt;
+  background-color: #888;
+  color: #FFF820;
+  font-size: 20pt;
+  line-height: 40pt;
+  border-radius: 25pt;
+  animation: rotateClockwise .25s;
+}
+div.modal > div.modal-wrapper > div.close-btn:hover {
+  animation: rotateCounterclockwise .25s;
+}  
+div.modal > div.modal-wrapper > div.dialog-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+}
+div.modal > div.modal-wrapper > div.dialog-wrapper > h1 {
+  font-size: 25pt;
+  margin-bottom: 20pt;
+}
+div.modal > div.modal-wrapper > div.dialog-wrapper > p {
+  font-size: 12pt;
+}
+
+div#help-modal > div.modal-wrapper {
+  width: 600px;
+  height: 450px;
+  padding: 10pt 10pt 30pt 10pt;
+}
+div#help-modal > div.modal-wrapper > div.dialog-wrapper > h2 {
+  font-size: 20pt;
+}
+div#help-modal > div.modal-wrapper > div.dialog-wrapper > p {
+  padding: 0 20pt;
+  box-sizing: border-box;
+  text-align: justify;
+  text-justify: inter-word;
+}
+div#help-modal > div.modal-wrapper > div.dialog-wrapper > p + p {
+  margin-top: 15pt;
+}  
+div#help-modal > div.modal-wrapper > div.dialog-wrapper > p > span {
+  color: aqua;
+}
+div#help-modal > div.modal-wrapper > div.dialog-wrapper > p > span.btn {
+  color: #ddd;
+  background-color: #222;
+  border-radius: 2pt;
+  font-size: 10pt;
+  line-height: 12pt;
+  padding: 2pt 6pt;
+  display: inline;
+}
+div#help-modal > div.modal-wrapper > div.dialog-wrapper > p > a {
+  color: #FFF820;
+  padding: 2pt 12pt;
+  margin-left: 10pt;
+  font-size: 12pt;
+  border-radius: 2.5pt;
+  background-color: #333;
+  text-decoration: none;
+  transition: .25s;
+}
+div#help-modal > div.modal-wrapper > div.dialog-wrapper > p > a:hover {
+  color: #FFF9A4;
+  background-color: #777;
+  transition: .25s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes rotateClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+@keyframes rotateCounterclockwise {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
