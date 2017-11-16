@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./main.css" />
+  <script src="./main.js"></script>
+  <title>K Means</title>
+</head>
+<body>
+  <div class="wrapper">
+    <svg width="600" height="600" id="k-means-svg"></svg>
+    <div class="btn-list">
+      <button id="run-k-means-btn">Run K-Means Algorithm</button>
+
+      <div id="disable-panel"></div>
+
+      <button disabled="disabled">Interval (mS)<input id="interval-input" type="text" value="1000" /></button>
+      <button id="iteration-field" disabled="disabled">Iteration<input id="iteration-input" type="text" value="10" /></button>
+      <button id="sample-mode-btn" data-trigger="true">Add Random Cluster</button>
+      <button class="lighten" id="sample-input-bg" disabled="disabled">Samples per Cluster <input type="text" id="sample-input" value="5"></button>
+      <button class="lighten" id="sample-range-input-bg" disabled="disabled">Cluster Range <input type="text" id="sample-range-input" value="100"></button>
+      <button class="lighten" id="clear-samples-btn">Clear Samples</button>
+      <button id="centroid-mode-btn" data-trigger="false">Add Centroid</button>
+      <button id="clear-centroids-btn">Clear Centroids</button>
+    </div>
+  </div>
+
+  <div id="error-modal" class="modal">
+    <div class="modal-wrapper">
+      <div class="modal-content">
+        <h2>Oops...</h2>
+        <p id="error-content">Something is wrong!</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

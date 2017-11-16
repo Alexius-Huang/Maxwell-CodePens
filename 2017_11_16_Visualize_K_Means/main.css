@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Comfortaa', cursive;
+}
+body { position: relative; }
+
+input:focus, button:focus { outline: none; }
+
+div.wrapper {
+  position: absolute;
+  width: 700px;
+  font-size: 0;
+  height: 600px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+div.wrapper > div.btn-list {
+  display: inline-block;
+  width: 100px;
+  height: 600px;
+  vertical-align: top;
+  overflow: auto;
+  position: relative;
+}
+
+div.wrapper > div.btn-list > button {
+  display: inline-block;
+  padding: 5pt;
+  width: 100px;
+  height: 80px;
+  background-color: #555;
+  border-radius: 0;
+  border: none;
+  color: white;
+  font-size: 10pt;
+  line-height: 15pt;
+  transition: .25s;
+  font-family: 'Comfortaa', cursive;
+}
+div.wrapper > div.btn-list > button[disabled]:hover {
+  background-color: #555;
+  color: white;
+}
+
+div#disable-panel {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100px;
+  height: 640px;
+}
+div#disable-panel.active {
+  display: block;
+}
+
+div.wrapper > div.btn-list > button[data-trigger="true"],
+div.wrapper > div.btn-list > button[data-trigger="true"]:hover {
+  background-color: rgb(255, 251, 135);
+  color: #333;
+}
+div.wrapper > div.btn-list > button.lighten {
+  background-color: rgba(255, 251, 135, 0.7);
+  color: #333;
+}
+div.wrapper > div.btn-list > button.lighten:hover {
+  background-color: rgba(255, 251, 135, 0.85);
+  color: #333;
+}
+div.wrapper > div.btn-list > button > input {
+  display: inline-block;
+  box-sizing: border-box;
+  font-family: 'Comfortaa', cursive;
+  width: 100px;
+  height: 20pt;
+  font-size: 10pt;
+  margin-top: 3pt;
+  margin-left: -5pt;
+  background-color: #444;
+  color: white;
+  border: none;
+  text-align: center;
+  transition: .25s;
+}
+div.wrapper > div.btn-list > button > input:focus {
+  background-color: #ddd;
+  color: #333;
+  transition: .25s;
+}
+
+div.wrapper > div.btn-list > button:hover {
+  background-color: #ddd;
+  color: #333;
+  transition: .25s;
+}
+
+button#run-k-means-btn.active {
+  background-color: rgb(255, 109, 109);
+}
+button#run-k-means-btn.active:hover {
+  background-color: rgb(255, 160, 160);
+  color: white;
+}
+
+svg {
+  background-color: #222;
+  display: inline-block;
+}
+
+path.centroid {
+  opacity: 0.5;
+}
+path.centroid.current {
+  opacity: 1;
+}
+
+div.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: .25s;
+}
+div.modal.active {
+  opacity: 1;
+  transition: .25s;
+  pointer-events: auto;
+}
+div.modal > div.modal-wrapper {
+  position: absolute;
+  width: 300pt;
+  height: 150pt;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: #333;
+  text-align: center;
+  color: #ddd;
+  font-size: 0;
+}
+div.modal > div.modal-wrapper:before {
+  content: '';
+  width: 0;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+div.modal > div.modal-wrapper > div.modal-content {
+  font-size: 12pt;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInEightyPercent {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+@keyframes fadeInFiftyPercent {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
