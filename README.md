@@ -23,6 +23,7 @@
 - 2017.08.06 <a href="https://codepen.io/maxwell_alexius/pen/VzPYYa">Mine Sweeper</a>
 - 2017.09.03 <a href="https://codepen.io/maxwell_alexius/pen/oeVxod">Python Syntax Highlighter</a>
 - 2017.10.08 <a href="https://codepen.io/maxwell_alexius/full/EwEVXj/">Linear Regression - Gradient Descent</a>
+- 2017.11.16 <a href="https://codepen.io/maxwell_alexius/full/vWeeLQ/">Visualize K-Means</a>
 
 Screenshots :
 
@@ -45,3 +46,4 @@ Screenshots :
 <img src="img/Mine_Sweeper.png" alt="mine sweeper" />
 <img src="img/Python_Syntax_Highlighter.png" alt="python syntax highlighter" />
 <img src="img/Linear_Regression.png" alt="linear regression" />
+<img src="img/Visualize_K-Means.png" alt="visualize k-means" />
