@@ -485,14 +485,13 @@ var main = function() {
       }
     }
 
-    let iterations = Number(iterationInput.value)
-    let interval   = Number(intervalInput.value)
+    let interval = Number(intervalInput.value)
     let runKMeansRecursive = function(i) {
       initializeKMeansCentroidData();
       labelizeSamples();
       colorizeSample();
       assignNewCentroidPoints(i);
-      iterationInput.setAttribute('value', originalIteration - i);
+      iterationInput.value = originalIteration - i;
 
       setTimeout(() => {
         if (i > 0 && mode === 'k-means') runKMeansRecursive(i - 1) 
@@ -500,6 +499,7 @@ var main = function() {
           runKMeansBtn.setAttribute('class', '')
           runKMeansBtn.innerText = 'Run K-Means Algorithm'
           disablePanel.setAttribute('class', '')
+          iterationInput.value = originalIteration
           mode = previousMode
         }
       }, interval);
@@ -510,7 +510,7 @@ var main = function() {
     runKMeansBtn.innerText = 'Stop'
     disablePanel.setAttribute('class', 'active')
 
-    runKMeansRecursive(iterations - 1)
+    runKMeansRecursive(originalIteration - 1)
   });
 
   /* Run KMeans For Preview */
